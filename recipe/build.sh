@@ -11,10 +11,9 @@ else
     # if we set $GOOS and $GOARCH, this will not work as we are not on the
     # target platform.  Fortunately, restic's build script does support this
     # as an option:
-    set _goos=${GOOS}
-    set _goarch=${GOARCH}
-    unset GOOS
-    unset GOARCH
+    _goos=${GOOS}
+    _goarch=${GOARCH}
+    unset GOOS GOARCH
     ${build} --goos ${_goos} --goarch ${_goarch}
 fi
 
