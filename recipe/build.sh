@@ -1,10 +1,10 @@
 #!/bin/bash
-set -eu
+set -ex
 
 build="go run -mod=vendor build.go --enable-cgo"
 
 # Build binary
-if [[ "$CONDA_BUILD_CROSS_COMPILATION" != "1" ]]; then
+if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
     ${build}
 else
     # We are cross-compiling a program with a build script written in go
