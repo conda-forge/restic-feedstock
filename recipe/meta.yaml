@@ -12,10 +12,15 @@ source:
 build:
   number: 0
   script:
-    - go run -mod=vendor build.go --enable-cgo
-    - mkdir -p $PREFIX/bin  # [not win]
+    - go run -mod=vendor build.go --enable-cgo  # [build_platform == target_platform]
+    - set _goos=$GOOS      # [build_platform != target_platform and not win]
+    - unset GOOS           # [build_platform != target_platform and not win]
+    - set _goarch=$GOARCH  # [build_platform != target_platform and not win]
+    - unset GOARCH         # [build_platform != target_platform and not win]
+    - go run -mod=vendor build.go --enable-cgo --goos ${_goos} --goarch ${_goarch}  # [build_platform != target_platform and not win]
+    - mkdir -p $PREFIX/bin          # [not win]
     - mv restic $PREFIX/bin/restic  # [not win]
-    - mkdir -p %PREFIX%\bin  # [win]
+    - mkdir -p %PREFIX%\bin                  # [win]
     - mv restic.exe %PREFIX%\bin\restic.exe  # [win]
 requirements:
   build:
