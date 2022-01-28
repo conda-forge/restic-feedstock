@@ -20,3 +20,9 @@ fi
 # Install binary
 mkdir -p $PREFIX/bin
 mv restic $PREFIX/bin/restic
+
+# Setup and copy licenses of dependencies
+go get github.com/google/go-licenses
+go-licenses save github.com/restic/restic/cmd/restic --save_path=licenses
+mkdir -p $PREFIX/info
+mv licenses $PREFIX/info/
