@@ -10,11 +10,11 @@ source:
   sha256: a9c88d5288ce04a6cc78afcda7590d3124966dab3daa9908de9b3e492e2925fb
 
 build:
-  number: 1
+  number: 2
 
 requirements:
   build:
-    - {{ compiler('go') }} 1.16
+    - {{ compiler('go') }} 1.17
 
 test:
   commands:
