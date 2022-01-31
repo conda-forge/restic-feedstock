@@ -25,4 +25,4 @@ mv restic $PREFIX/bin/restic
 go install github.com/google/go-licenses@latest
 go-licenses save github.com/restic/restic/cmd/restic --save_path=licenses
 mkdir -p $PREFIX/info
-mv licenses $PREFIX/info/
+cp -r licenses $PREFIX/info/
