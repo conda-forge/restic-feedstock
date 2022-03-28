@@ -1,4 +1,5 @@
 rem Building binary
+go mod vendor
 go run -mod=vendor build.go --enable-cgo
 
 rem Install binary
