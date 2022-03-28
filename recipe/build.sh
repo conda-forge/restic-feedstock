@@ -3,6 +3,9 @@ set -ex
 
 build="go run -mod=vendor build.go --enable-cgo"
 
+# Resets vendoring
+go mod vendor
+
 # Build binary
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
     ${build}
