@@ -27,4 +27,4 @@ mv restic $PREFIX/bin/restic
 # Setup and copy licenses of dependencies
 GOBIN=${PREFIX}/bin go install github.com/google/go-licenses@latest
 go-licenses save github.com/restic/restic/cmd/restic --save_path=licenses
-rm -f ${GOBIN}/go-licenses
+rm -f ${PREFIX}/bin/go-licenses
