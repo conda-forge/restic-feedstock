@@ -14,7 +14,7 @@ build:
 
 requirements:
   build:
-    - {{ compiler('go') }} 1.17
+    - {{ compiler('go') }} 1.18
 
 test:
   commands:
