@@ -1,5 +1,5 @@
 {% set name = "restic" %}
-{% set version = "0.15.0" %}
+{% set version = "0.15.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/restic/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 85a6408cfb0798dab52335bcb00ac32066376c32daaa75461d43081499bc7de8
+  sha256: 4e3d27dfda89388bd20eff24a61e3ea961248849c38ea22de44763a1027570e1
 
 build:
   number: 0
